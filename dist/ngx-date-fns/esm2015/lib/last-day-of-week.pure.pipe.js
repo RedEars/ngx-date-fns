@@ -1,0 +1,26 @@
+import { NgModule, Pipe } from '@angular/core';
+import lastDayOfWeek from 'date-fns/lastDayOfWeek';
+import { calculateLocale, DateFnsConfigurationService } from './date-fns-configuration.service';
+export class LastDayOfWeekPurePipe {
+    constructor(config) {
+        this.config = config;
+    }
+    transform(date, options) {
+        return lastDayOfWeek(date, calculateLocale(options, this.config));
+    }
+}
+LastDayOfWeekPurePipe.decorators = [
+    { type: Pipe, args: [{ name: 'dfnsLastDayOfWeekPure' },] }
+];
+LastDayOfWeekPurePipe.ctorParameters = () => [
+    { type: DateFnsConfigurationService }
+];
+export class LastDayOfWeekPurePipeModule {
+}
+LastDayOfWeekPurePipeModule.decorators = [
+    { type: NgModule, args: [{
+                declarations: [LastDayOfWeekPurePipe],
+                exports: [LastDayOfWeekPurePipe]
+            },] }
+];
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibGFzdC1kYXktb2Ytd2Vlay5wdXJlLnBpcGUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9wcm9qZWN0cy9uZ3gtZGF0ZS1mbnMvc3JjL2xpYi9sYXN0LWRheS1vZi13ZWVrLnB1cmUucGlwZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLEVBQUUsUUFBUSxFQUFFLElBQUksRUFBaUIsTUFBTSxlQUFlLENBQUM7QUFFOUQsT0FBTyxhQUFhLE1BQU0sd0JBQXdCLENBQUM7QUFDbkQsT0FBTyxFQUNMLGVBQWUsRUFDZiwyQkFBMkIsRUFDNUIsTUFBTSxrQ0FBa0MsQ0FBQztBQUkxQyxNQUFNLE9BQU8scUJBQXFCO0lBQ2hDLFlBQW1CLE1BQW1DO1FBQW5DLFdBQU0sR0FBTixNQUFNLENBQTZCO0lBQUcsQ0FBQztJQUUxRCxTQUFTLENBQ1AsSUFBc0IsRUFDdEIsT0FHQztRQUVELE9BQU8sYUFBYSxDQUFDLElBQUksRUFBRSxlQUFlLENBQUMsT0FBTyxFQUFFLElBQUksQ0FBQyxNQUFNLENBQUMsQ0FBQyxDQUFDO0lBQ3BFLENBQUM7OztZQVpGLElBQUksU0FBQyxFQUFFLElBQUksRUFBRSx1QkFBdUIsRUFBRTs7O1lBSnJDLDJCQUEyQjs7QUF1QjdCLE1BQU0sT0FBTywyQkFBMkI7OztZQUp2QyxRQUFRLFNBQUM7Z0JBQ1IsWUFBWSxFQUFFLENBQUMscUJBQXFCLENBQUM7Z0JBQ3JDLE9BQU8sRUFBRSxDQUFDLHFCQUFxQixDQUFDO2FBQ2pDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgTmdNb2R1bGUsIFBpcGUsIFBpcGVUcmFuc2Zvcm0gfSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7IExvY2FsZSB9IGZyb20gJ2RhdGUtZm5zJztcbmltcG9ydCBsYXN0RGF5T2ZXZWVrIGZyb20gJ2RhdGUtZm5zL2xhc3REYXlPZldlZWsnO1xuaW1wb3J0IHtcbiAgY2FsY3VsYXRlTG9jYWxlLFxuICBEYXRlRm5zQ29uZmlndXJhdGlvblNlcnZpY2Vcbn0gZnJvbSAnLi9kYXRlLWZucy1jb25maWd1cmF0aW9uLnNlcnZpY2UnO1xuaW1wb3J0IHsgRGF0ZUZuc0lucHV0RGF0ZSwgRGF0ZUZuc1dlZWtJbmRleCB9IGZyb20gJy4vdHlwZXMnO1xuXG5AUGlwZSh7IG5hbWU6ICdkZm5zTGFzdERheU9mV2Vla1B1cmUnIH0pXG5leHBvcnQgY2xhc3MgTGFzdERheU9mV2Vla1B1cmVQaXBlIGltcGxlbWVudHMgUGlwZVRyYW5zZm9ybSB7XG4gIGNvbnN0cnVjdG9yKHB1YmxpYyBjb25maWc6IERhdGVGbnNDb25maWd1cmF0aW9uU2VydmljZSkge31cblxuICB0cmFuc2Zvcm0oXG4gICAgZGF0ZTogRGF0ZUZuc0lucHV0RGF0ZSxcbiAgICBvcHRpb25zPzoge1xuICAgICAgbG9jYWxlPzogTG9jYWxlO1xuICAgICAgd2Vla1N0YXJ0c09uPzogRGF0ZUZuc1dlZWtJbmRleDtcbiAgICB9XG4gICk6IERhdGUge1xuICAgIHJldHVybiBsYXN0RGF5T2ZXZWVrKGRhdGUsIGNhbGN1bGF0ZUxvY2FsZShvcHRpb25zLCB0aGlzLmNvbmZpZykpO1xuICB9XG59XG5cbkBOZ01vZHVsZSh7XG4gIGRlY2xhcmF0aW9uczogW0xhc3REYXlPZldlZWtQdXJlUGlwZV0sXG4gIGV4cG9ydHM6IFtMYXN0RGF5T2ZXZWVrUHVyZVBpcGVdXG59KVxuZXhwb3J0IGNsYXNzIExhc3REYXlPZldlZWtQdXJlUGlwZU1vZHVsZSB7fVxuIl19

@@ -1,0 +1,19 @@
+import { NgModule, Pipe } from '@angular/core';
+import startOfISOWeek from 'date-fns/startOfISOWeek';
+export class StartOfISOWeekPipe {
+    transform(date) {
+        return startOfISOWeek(date);
+    }
+}
+StartOfISOWeekPipe.decorators = [
+    { type: Pipe, args: [{ name: 'dfnsStartOfISOWeek' },] }
+];
+export class StartOfISOWeekPipeModule {
+}
+StartOfISOWeekPipeModule.decorators = [
+    { type: NgModule, args: [{
+                declarations: [StartOfISOWeekPipe],
+                exports: [StartOfISOWeekPipe]
+            },] }
+];
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3RhcnQtb2YtaXNvLXdlZWsucGlwZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3Byb2plY3RzL25neC1kYXRlLWZucy9zcmMvbGliL3N0YXJ0LW9mLWlzby13ZWVrLnBpcGUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLFFBQVEsRUFBRSxJQUFJLEVBQWlCLE1BQU0sZUFBZSxDQUFDO0FBRTlELE9BQU8sY0FBYyxNQUFNLHlCQUF5QixDQUFDO0FBR3JELE1BQU0sT0FBTyxrQkFBa0I7SUFDN0IsU0FBUyxDQUFDLElBQXNCO1FBQzlCLE9BQU8sY0FBYyxDQUFDLElBQUksQ0FBQyxDQUFDO0lBQzlCLENBQUM7OztZQUpGLElBQUksU0FBQyxFQUFFLElBQUksRUFBRSxvQkFBb0IsRUFBRTs7QUFXcEMsTUFBTSxPQUFPLHdCQUF3Qjs7O1lBSnBDLFFBQVEsU0FBQztnQkFDUixZQUFZLEVBQUUsQ0FBQyxrQkFBa0IsQ0FBQztnQkFDbEMsT0FBTyxFQUFFLENBQUMsa0JBQWtCLENBQUM7YUFDOUIiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBOZ01vZHVsZSwgUGlwZSwgUGlwZVRyYW5zZm9ybSB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuaW1wb3J0IHsgRGF0ZUZuc0lucHV0RGF0ZSB9IGZyb20gJy4vdHlwZXMnO1xuaW1wb3J0IHN0YXJ0T2ZJU09XZWVrIGZyb20gJ2RhdGUtZm5zL3N0YXJ0T2ZJU09XZWVrJztcblxuQFBpcGUoeyBuYW1lOiAnZGZuc1N0YXJ0T2ZJU09XZWVrJyB9KVxuZXhwb3J0IGNsYXNzIFN0YXJ0T2ZJU09XZWVrUGlwZSBpbXBsZW1lbnRzIFBpcGVUcmFuc2Zvcm0ge1xuICB0cmFuc2Zvcm0oZGF0ZTogRGF0ZUZuc0lucHV0RGF0ZSk6IERhdGUge1xuICAgIHJldHVybiBzdGFydE9mSVNPV2VlayhkYXRlKTtcbiAgfVxufVxuXG5ATmdNb2R1bGUoe1xuICBkZWNsYXJhdGlvbnM6IFtTdGFydE9mSVNPV2Vla1BpcGVdLFxuICBleHBvcnRzOiBbU3RhcnRPZklTT1dlZWtQaXBlXVxufSlcbmV4cG9ydCBjbGFzcyBTdGFydE9mSVNPV2Vla1BpcGVNb2R1bGUge31cbiJdfQ==

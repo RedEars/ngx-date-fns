@@ -1,0 +1,32 @@
+import { Pipe, ChangeDetectorRef, NgModule } from '@angular/core';
+import { DateFnsConfigurationService, calculateLocale } from './date-fns-configuration.service';
+import format from 'date-fns/format';
+export class FormatPipe {
+    constructor(config, cd) {
+        this.config = config;
+        this.cd = cd;
+        this.localeChanged$ = this.config.localeChanged.subscribe(_ => this.cd.markForCheck());
+    }
+    ngOnDestroy() {
+        this.localeChanged$.unsubscribe();
+    }
+    transform(date, dateFormat, options) {
+        return format(date, dateFormat, calculateLocale(options, this.config));
+    }
+}
+FormatPipe.decorators = [
+    { type: Pipe, args: [{ name: 'dfnsFormat', pure: false },] }
+];
+FormatPipe.ctorParameters = () => [
+    { type: DateFnsConfigurationService },
+    { type: ChangeDetectorRef }
+];
+export class FormatPipeModule {
+}
+FormatPipeModule.decorators = [
+    { type: NgModule, args: [{
+                declarations: [FormatPipe],
+                exports: [FormatPipe]
+            },] }
+];
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZm9ybWF0LnBpcGUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9wcm9qZWN0cy9uZ3gtZGF0ZS1mbnMvc3JjL2xpYi9mb3JtYXQucGlwZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLEVBQ0wsSUFBSSxFQUVKLGlCQUFpQixFQUVqQixRQUFRLEVBQ1QsTUFBTSxlQUFlLENBQUM7QUFDdkIsT0FBTyxFQUNMLDJCQUEyQixFQUMzQixlQUFlLEVBQ2hCLE1BQU0sa0NBQWtDLENBQUM7QUFJMUMsT0FBTyxNQUFNLE1BQU0saUJBQWlCLENBQUM7QUFHckMsTUFBTSxPQUFPLFVBQVU7SUFHckIsWUFDUyxNQUFtQyxFQUNuQyxFQUFxQjtRQURyQixXQUFNLEdBQU4sTUFBTSxDQUE2QjtRQUNuQyxPQUFFLEdBQUYsRUFBRSxDQUFtQjtRQUU1QixJQUFJLENBQUMsY0FBYyxHQUFHLElBQUksQ0FBQyxNQUFNLENBQUMsYUFBYSxDQUFDLFNBQVMsQ0FBQyxDQUFDLENBQUMsRUFBRSxDQUM1RCxJQUFJLENBQUMsRUFBRSxDQUFDLFlBQVksRUFBRSxDQUN2QixDQUFDO0lBQ0osQ0FBQztJQUVELFdBQVc7UUFDVCxJQUFJLENBQUMsY0FBYyxDQUFDLFdBQVcsRUFBRSxDQUFDO0lBQ3BDLENBQUM7SUFFRCxTQUFTLENBQ1AsSUFBc0IsRUFDdEIsVUFBa0IsRUFDbEIsT0FNQztRQUVELE9BQU8sTUFBTSxDQUFDLElBQUksRUFBRSxVQUFVLEVBQUUsZUFBZSxDQUFDLE9BQU8sRUFBRSxJQUFJLENBQUMsTUFBTSxDQUFDLENBQUMsQ0FBQztJQUN6RSxDQUFDOzs7WUE3QkYsSUFBSSxTQUFDLEVBQUUsSUFBSSxFQUFFLFlBQVksRUFBRSxJQUFJLEVBQUUsS0FBSyxFQUFFOzs7WUFSdkMsMkJBQTJCO1lBTDNCLGlCQUFpQjs7QUFpRG5CLE1BQU0sT0FBTyxnQkFBZ0I7OztZQUo1QixRQUFRLFNBQUM7Z0JBQ1IsWUFBWSxFQUFFLENBQUMsVUFBVSxDQUFDO2dCQUMxQixPQUFPLEVBQUUsQ0FBQyxVQUFVLENBQUM7YUFDdEIiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQge1xuICBQaXBlLFxuICBQaXBlVHJhbnNmb3JtLFxuICBDaGFuZ2VEZXRlY3RvclJlZixcbiAgT25EZXN0cm95LFxuICBOZ01vZHVsZVxufSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7XG4gIERhdGVGbnNDb25maWd1cmF0aW9uU2VydmljZSxcbiAgY2FsY3VsYXRlTG9jYWxlXG59IGZyb20gJy4vZGF0ZS1mbnMtY29uZmlndXJhdGlvbi5zZXJ2aWNlJztcbmltcG9ydCB7IFN1YnNjcmlwdGlvbiB9IGZyb20gJ3J4anMnO1xuaW1wb3J0IHsgRGF0ZUZuc0lucHV0RGF0ZSB9IGZyb20gJy4vdHlwZXMnO1xuaW1wb3J0IHsgTG9jYWxlIH0gZnJvbSAnZGF0ZS1mbnMnO1xuaW1wb3J0IGZvcm1hdCBmcm9tICdkYXRlLWZucy9mb3JtYXQnO1xuXG5AUGlwZSh7IG5hbWU6ICdkZm5zRm9ybWF0JywgcHVyZTogZmFsc2UgfSlcbmV4cG9ydCBjbGFzcyBGb3JtYXRQaXBlIGltcGxlbWVudHMgUGlwZVRyYW5zZm9ybSwgT25EZXN0cm95IHtcbiAgcHJpdmF0ZSBsb2NhbGVDaGFuZ2VkJDogU3Vic2NyaXB0aW9uO1xuXG4gIGNvbnN0cnVjdG9yKFxuICAgIHB1YmxpYyBjb25maWc6IERhdGVGbnNDb25maWd1cmF0aW9uU2VydmljZSxcbiAgICBwdWJsaWMgY2Q6IENoYW5nZURldGVjdG9yUmVmXG4gICkge1xuICAgIHRoaXMubG9jYWxlQ2hhbmdlZCQgPSB0aGlzLmNvbmZpZy5sb2NhbGVDaGFuZ2VkLnN1YnNjcmliZShfID0+XG4gICAgICB0aGlzLmNkLm1hcmtGb3JDaGVjaygpXG4gICAgKTtcbiAgfVxuXG4gIG5nT25EZXN0cm95KCk6IHZvaWQge1xuICAgIHRoaXMubG9jYWxlQ2hhbmdlZCQudW5zdWJzY3JpYmUoKTtcbiAgfVxuXG4gIHRyYW5zZm9ybShcbiAgICBkYXRlOiBEYXRlRm5zSW5wdXREYXRlLFxuICAgIGRhdGVGb3JtYXQ6IHN0cmluZyxcbiAgICBvcHRpb25zPzoge1xuICAgICAgbG9jYWxlPzogTG9jYWxlO1xuICAgICAgd2Vla1N0YXJ0c09uPzogMCB8IDEgfCAyIHwgMyB8IDQgfCA1IHwgNjtcbiAgICAgIGZpcnN0V2Vla0NvbnRhaW5zRGF0ZT86IG51bWJlcjtcbiAgICAgIHVzZUFkZGl0aW9uYWxXZWVrWWVhclRva2Vucz86IGJvb2xlYW47XG4gICAgICB1c2VBZGRpdGlvbmFsRGF5T2ZZZWFyVG9rZW5zPzogYm9vbGVhbjtcbiAgICB9XG4gICk6IHN0cmluZyB7XG4gICAgcmV0dXJuIGZvcm1hdChkYXRlLCBkYXRlRm9ybWF0LCBjYWxjdWxhdGVMb2NhbGUob3B0aW9ucywgdGhpcy5jb25maWcpKTtcbiAgfVxufVxuXG5ATmdNb2R1bGUoe1xuICBkZWNsYXJhdGlvbnM6IFtGb3JtYXRQaXBlXSxcbiAgZXhwb3J0czogW0Zvcm1hdFBpcGVdXG59KVxuZXhwb3J0IGNsYXNzIEZvcm1hdFBpcGVNb2R1bGUge31cbiJdfQ==

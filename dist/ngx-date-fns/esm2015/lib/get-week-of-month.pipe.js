@@ -1,0 +1,32 @@
+import { Pipe, ChangeDetectorRef, NgModule } from '@angular/core';
+import getWeekOfMonth from 'date-fns/getWeekOfMonth';
+import { DateFnsConfigurationService, calculateLocale } from './date-fns-configuration.service';
+export class GetWeekOfMonthPipe {
+    constructor(config, cd) {
+        this.config = config;
+        this.cd = cd;
+        this.localeChanged$ = this.config.localeChanged.subscribe(_ => this.cd.markForCheck());
+    }
+    ngOnDestroy() {
+        this.localeChanged$.unsubscribe();
+    }
+    transform(date, options) {
+        return getWeekOfMonth(date, calculateLocale(options, this.config));
+    }
+}
+GetWeekOfMonthPipe.decorators = [
+    { type: Pipe, args: [{ name: 'dfnsGetWeekOfMonth', pure: false },] }
+];
+GetWeekOfMonthPipe.ctorParameters = () => [
+    { type: DateFnsConfigurationService },
+    { type: ChangeDetectorRef }
+];
+export class GetWeekOfMonthPipeModule {
+}
+GetWeekOfMonthPipeModule.decorators = [
+    { type: NgModule, args: [{
+                declarations: [GetWeekOfMonthPipe],
+                exports: [GetWeekOfMonthPipe]
+            },] }
+];
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZ2V0LXdlZWstb2YtbW9udGgucGlwZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3Byb2plY3RzL25neC1kYXRlLWZucy9zcmMvbGliL2dldC13ZWVrLW9mLW1vbnRoLnBpcGUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUNMLElBQUksRUFFSixpQkFBaUIsRUFFakIsUUFBUSxFQUNULE1BQU0sZUFBZSxDQUFDO0FBR3ZCLE9BQU8sY0FBYyxNQUFNLHlCQUF5QixDQUFDO0FBRXJELE9BQU8sRUFDTCwyQkFBMkIsRUFDM0IsZUFBZSxFQUNoQixNQUFNLGtDQUFrQyxDQUFDO0FBRzFDLE1BQU0sT0FBTyxrQkFBa0I7SUFHN0IsWUFDUyxNQUFtQyxFQUNuQyxFQUFxQjtRQURyQixXQUFNLEdBQU4sTUFBTSxDQUE2QjtRQUNuQyxPQUFFLEdBQUYsRUFBRSxDQUFtQjtRQUU1QixJQUFJLENBQUMsY0FBYyxHQUFHLElBQUksQ0FBQyxNQUFNLENBQUMsYUFBYSxDQUFDLFNBQVMsQ0FBQyxDQUFDLENBQUMsRUFBRSxDQUM1RCxJQUFJLENBQUMsRUFBRSxDQUFDLFlBQVksRUFBRSxDQUN2QixDQUFDO0lBQ0osQ0FBQztJQUVELFdBQVc7UUFDVCxJQUFJLENBQUMsY0FBYyxDQUFDLFdBQVcsRUFBRSxDQUFDO0lBQ3BDLENBQUM7SUFFRCxTQUFTLENBQ1AsSUFBc0IsRUFDdEIsT0FHQztRQUVELE9BQU8sY0FBYyxDQUFDLElBQUksRUFBRSxlQUFlLENBQUMsT0FBTyxFQUFFLElBQUksQ0FBQyxNQUFNLENBQUMsQ0FBQyxDQUFDO0lBQ3JFLENBQUM7OztZQXpCRixJQUFJLFNBQUMsRUFBRSxJQUFJLEVBQUUsb0JBQW9CLEVBQUUsSUFBSSxFQUFFLEtBQUssRUFBRTs7O1lBSi9DLDJCQUEyQjtZQVQzQixpQkFBaUI7O0FBNkNuQixNQUFNLE9BQU8sd0JBQXdCOzs7WUFKcEMsUUFBUSxTQUFDO2dCQUNSLFlBQVksRUFBRSxDQUFDLGtCQUFrQixDQUFDO2dCQUNsQyxPQUFPLEVBQUUsQ0FBQyxrQkFBa0IsQ0FBQzthQUM5QiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7XG4gIFBpcGUsXG4gIFBpcGVUcmFuc2Zvcm0sXG4gIENoYW5nZURldGVjdG9yUmVmLFxuICBPbkRlc3Ryb3ksXG4gIE5nTW9kdWxlXG59IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuaW1wb3J0IHsgRGF0ZUZuc0lucHV0RGF0ZSwgRGF0ZUZuc1dlZWtJbmRleCB9IGZyb20gJy4vdHlwZXMnO1xuaW1wb3J0IHsgTG9jYWxlIH0gZnJvbSAnZGF0ZS1mbnMnO1xuaW1wb3J0IGdldFdlZWtPZk1vbnRoIGZyb20gJ2RhdGUtZm5zL2dldFdlZWtPZk1vbnRoJztcbmltcG9ydCB7IFN1YnNjcmlwdGlvbiB9IGZyb20gJ3J4anMnO1xuaW1wb3J0IHtcbiAgRGF0ZUZuc0NvbmZpZ3VyYXRpb25TZXJ2aWNlLFxuICBjYWxjdWxhdGVMb2NhbGVcbn0gZnJvbSAnLi9kYXRlLWZucy1jb25maWd1cmF0aW9uLnNlcnZpY2UnO1xuXG5AUGlwZSh7IG5hbWU6ICdkZm5zR2V0V2Vla09mTW9udGgnLCBwdXJlOiBmYWxzZSB9KVxuZXhwb3J0IGNsYXNzIEdldFdlZWtPZk1vbnRoUGlwZSBpbXBsZW1lbnRzIFBpcGVUcmFuc2Zvcm0sIE9uRGVzdHJveSB7XG4gIHByaXZhdGUgbG9jYWxlQ2hhbmdlZCQ6IFN1YnNjcmlwdGlvbjtcblxuICBjb25zdHJ1Y3RvcihcbiAgICBwdWJsaWMgY29uZmlnOiBEYXRlRm5zQ29uZmlndXJhdGlvblNlcnZpY2UsXG4gICAgcHVibGljIGNkOiBDaGFuZ2VEZXRlY3RvclJlZlxuICApIHtcbiAgICB0aGlzLmxvY2FsZUNoYW5nZWQkID0gdGhpcy5jb25maWcubG9jYWxlQ2hhbmdlZC5zdWJzY3JpYmUoXyA9PlxuICAgICAgdGhpcy5jZC5tYXJrRm9yQ2hlY2soKVxuICAgICk7XG4gIH1cblxuICBuZ09uRGVzdHJveSgpOiB2b2lkIHtcbiAgICB0aGlzLmxvY2FsZUNoYW5nZWQkLnVuc3Vic2NyaWJlKCk7XG4gIH1cblxuICB0cmFuc2Zvcm0oXG4gICAgZGF0ZTogRGF0ZUZuc0lucHV0RGF0ZSxcbiAgICBvcHRpb25zPzoge1xuICAgICAgbG9jYWxlPzogTG9jYWxlO1xuICAgICAgd2Vla1N0YXJ0c09uPzogRGF0ZUZuc1dlZWtJbmRleDtcbiAgICB9XG4gICk6IG51bWJlciB7XG4gICAgcmV0dXJuIGdldFdlZWtPZk1vbnRoKGRhdGUsIGNhbGN1bGF0ZUxvY2FsZShvcHRpb25zLCB0aGlzLmNvbmZpZykpO1xuICB9XG59XG5cbkBOZ01vZHVsZSh7XG4gIGRlY2xhcmF0aW9uczogW0dldFdlZWtPZk1vbnRoUGlwZV0sXG4gIGV4cG9ydHM6IFtHZXRXZWVrT2ZNb250aFBpcGVdXG59KVxuZXhwb3J0IGNsYXNzIEdldFdlZWtPZk1vbnRoUGlwZU1vZHVsZSB7fVxuIl19

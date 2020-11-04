@@ -1,0 +1,19 @@
+import { NgModule, Pipe } from '@angular/core';
+import getISOWeeksInYear from 'date-fns/getISOWeeksInYear';
+export class GetISOWeeksInYearPipe {
+    transform(date) {
+        return getISOWeeksInYear(date);
+    }
+}
+GetISOWeeksInYearPipe.decorators = [
+    { type: Pipe, args: [{ name: 'dfnsGetISOWeeksInYear' },] }
+];
+export class GetISOWeeksInYearPipeModule {
+}
+GetISOWeeksInYearPipeModule.decorators = [
+    { type: NgModule, args: [{
+                declarations: [GetISOWeeksInYearPipe],
+                exports: [GetISOWeeksInYearPipe]
+            },] }
+];
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZ2V0LWlzby13ZWVrcy1pbi15ZWFyLnBpcGUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9wcm9qZWN0cy9uZ3gtZGF0ZS1mbnMvc3JjL2xpYi9nZXQtaXNvLXdlZWtzLWluLXllYXIucGlwZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLEVBQUUsUUFBUSxFQUFFLElBQUksRUFBaUIsTUFBTSxlQUFlLENBQUM7QUFFOUQsT0FBTyxpQkFBaUIsTUFBTSw0QkFBNEIsQ0FBQztBQUczRCxNQUFNLE9BQU8scUJBQXFCO0lBQ2hDLFNBQVMsQ0FBQyxJQUFzQjtRQUM5QixPQUFPLGlCQUFpQixDQUFDLElBQUksQ0FBQyxDQUFDO0lBQ2pDLENBQUM7OztZQUpGLElBQUksU0FBQyxFQUFFLElBQUksRUFBRSx1QkFBdUIsRUFBRTs7QUFXdkMsTUFBTSxPQUFPLDJCQUEyQjs7O1lBSnZDLFFBQVEsU0FBQztnQkFDUixZQUFZLEVBQUUsQ0FBQyxxQkFBcUIsQ0FBQztnQkFDckMsT0FBTyxFQUFFLENBQUMscUJBQXFCLENBQUM7YUFDakMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBOZ01vZHVsZSwgUGlwZSwgUGlwZVRyYW5zZm9ybSB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuaW1wb3J0IHsgRGF0ZUZuc0lucHV0RGF0ZSB9IGZyb20gJy4vdHlwZXMnO1xuaW1wb3J0IGdldElTT1dlZWtzSW5ZZWFyIGZyb20gJ2RhdGUtZm5zL2dldElTT1dlZWtzSW5ZZWFyJztcblxuQFBpcGUoeyBuYW1lOiAnZGZuc0dldElTT1dlZWtzSW5ZZWFyJyB9KVxuZXhwb3J0IGNsYXNzIEdldElTT1dlZWtzSW5ZZWFyUGlwZSBpbXBsZW1lbnRzIFBpcGVUcmFuc2Zvcm0ge1xuICB0cmFuc2Zvcm0oZGF0ZTogRGF0ZUZuc0lucHV0RGF0ZSk6IG51bWJlciB7XG4gICAgcmV0dXJuIGdldElTT1dlZWtzSW5ZZWFyKGRhdGUpO1xuICB9XG59XG5cbkBOZ01vZHVsZSh7XG4gIGRlY2xhcmF0aW9uczogW0dldElTT1dlZWtzSW5ZZWFyUGlwZV0sXG4gIGV4cG9ydHM6IFtHZXRJU09XZWVrc0luWWVhclBpcGVdXG59KVxuZXhwb3J0IGNsYXNzIEdldElTT1dlZWtzSW5ZZWFyUGlwZU1vZHVsZSB7fVxuIl19

@@ -1,0 +1,19 @@
+import { NgModule, Pipe } from '@angular/core';
+import lastDayOfQuarter from 'date-fns/lastDayOfQuarter';
+export class LastDayOfQuarterPipe {
+    transform(date) {
+        return lastDayOfQuarter(date);
+    }
+}
+LastDayOfQuarterPipe.decorators = [
+    { type: Pipe, args: [{ name: 'dfnsLastDayOfQuarter' },] }
+];
+export class LastDayOfQuarterPipeModule {
+}
+LastDayOfQuarterPipeModule.decorators = [
+    { type: NgModule, args: [{
+                declarations: [LastDayOfQuarterPipe],
+                exports: [LastDayOfQuarterPipe]
+            },] }
+];
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibGFzdC1kYXktb2YtcXVhcnRlci5waXBlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vcHJvamVjdHMvbmd4LWRhdGUtZm5zL3NyYy9saWIvbGFzdC1kYXktb2YtcXVhcnRlci5waXBlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFpQixNQUFNLGVBQWUsQ0FBQztBQUU5RCxPQUFPLGdCQUFnQixNQUFNLDJCQUEyQixDQUFDO0FBR3pELE1BQU0sT0FBTyxvQkFBb0I7SUFDL0IsU0FBUyxDQUFDLElBQXNCO1FBQzlCLE9BQU8sZ0JBQWdCLENBQUMsSUFBSSxDQUFDLENBQUM7SUFDaEMsQ0FBQzs7O1lBSkYsSUFBSSxTQUFDLEVBQUUsSUFBSSxFQUFFLHNCQUFzQixFQUFFOztBQVd0QyxNQUFNLE9BQU8sMEJBQTBCOzs7WUFKdEMsUUFBUSxTQUFDO2dCQUNSLFlBQVksRUFBRSxDQUFDLG9CQUFvQixDQUFDO2dCQUNwQyxPQUFPLEVBQUUsQ0FBQyxvQkFBb0IsQ0FBQzthQUNoQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IE5nTW9kdWxlLCBQaXBlLCBQaXBlVHJhbnNmb3JtIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBEYXRlRm5zSW5wdXREYXRlIH0gZnJvbSAnLi90eXBlcyc7XG5pbXBvcnQgbGFzdERheU9mUXVhcnRlciBmcm9tICdkYXRlLWZucy9sYXN0RGF5T2ZRdWFydGVyJztcblxuQFBpcGUoeyBuYW1lOiAnZGZuc0xhc3REYXlPZlF1YXJ0ZXInIH0pXG5leHBvcnQgY2xhc3MgTGFzdERheU9mUXVhcnRlclBpcGUgaW1wbGVtZW50cyBQaXBlVHJhbnNmb3JtIHtcbiAgdHJhbnNmb3JtKGRhdGU6IERhdGVGbnNJbnB1dERhdGUpOiBEYXRlIHtcbiAgICByZXR1cm4gbGFzdERheU9mUXVhcnRlcihkYXRlKTtcbiAgfVxufVxuXG5ATmdNb2R1bGUoe1xuICBkZWNsYXJhdGlvbnM6IFtMYXN0RGF5T2ZRdWFydGVyUGlwZV0sXG4gIGV4cG9ydHM6IFtMYXN0RGF5T2ZRdWFydGVyUGlwZV1cbn0pXG5leHBvcnQgY2xhc3MgTGFzdERheU9mUXVhcnRlclBpcGVNb2R1bGUge31cbiJdfQ==

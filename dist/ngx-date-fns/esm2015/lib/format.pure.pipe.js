@@ -1,0 +1,26 @@
+import { NgModule, Pipe } from '@angular/core';
+import format from 'date-fns/format';
+import { DateFnsConfigurationService, calculateLocale } from './date-fns-configuration.service';
+export class FormatPurePipe {
+    constructor(config) {
+        this.config = config;
+    }
+    transform(date, dateFormat, options) {
+        return format(date, dateFormat, calculateLocale(options, this.config));
+    }
+}
+FormatPurePipe.decorators = [
+    { type: Pipe, args: [{ name: 'dfnsFormatPure' },] }
+];
+FormatPurePipe.ctorParameters = () => [
+    { type: DateFnsConfigurationService }
+];
+export class FormatPurePipeModule {
+}
+FormatPurePipeModule.decorators = [
+    { type: NgModule, args: [{
+                declarations: [FormatPurePipe],
+                exports: [FormatPurePipe]
+            },] }
+];
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZm9ybWF0LnB1cmUucGlwZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL3Byb2plY3RzL25neC1kYXRlLWZucy9zcmMvbGliL2Zvcm1hdC5wdXJlLnBpcGUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxFQUFFLFFBQVEsRUFBRSxJQUFJLEVBQWlCLE1BQU0sZUFBZSxDQUFDO0FBRTlELE9BQU8sTUFBTSxNQUFNLGlCQUFpQixDQUFDO0FBRXJDLE9BQU8sRUFDTCwyQkFBMkIsRUFDM0IsZUFBZSxFQUNoQixNQUFNLGtDQUFrQyxDQUFDO0FBRzFDLE1BQU0sT0FBTyxjQUFjO0lBQ3pCLFlBQW1CLE1BQW1DO1FBQW5DLFdBQU0sR0FBTixNQUFNLENBQTZCO0lBQUcsQ0FBQztJQUUxRCxTQUFTLENBQ1AsSUFBc0IsRUFDdEIsVUFBa0IsRUFDbEIsT0FNQztRQUVELE9BQU8sTUFBTSxDQUFDLElBQUksRUFBRSxVQUFVLEVBQUUsZUFBZSxDQUFDLE9BQU8sRUFBRSxJQUFJLENBQUMsTUFBTSxDQUFDLENBQUMsQ0FBQztJQUN6RSxDQUFDOzs7WUFoQkYsSUFBSSxTQUFDLEVBQUUsSUFBSSxFQUFFLGdCQUFnQixFQUFFOzs7WUFKOUIsMkJBQTJCOztBQTJCN0IsTUFBTSxPQUFPLG9CQUFvQjs7O1lBSmhDLFFBQVEsU0FBQztnQkFDUixZQUFZLEVBQUUsQ0FBQyxjQUFjLENBQUM7Z0JBQzlCLE9BQU8sRUFBRSxDQUFDLGNBQWMsQ0FBQzthQUMxQiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IE5nTW9kdWxlLCBQaXBlLCBQaXBlVHJhbnNmb3JtIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBMb2NhbGUgfSBmcm9tICdkYXRlLWZucyc7XG5pbXBvcnQgZm9ybWF0IGZyb20gJ2RhdGUtZm5zL2Zvcm1hdCc7XG5pbXBvcnQgeyBEYXRlRm5zSW5wdXREYXRlIH0gZnJvbSAnLi90eXBlcyc7XG5pbXBvcnQge1xuICBEYXRlRm5zQ29uZmlndXJhdGlvblNlcnZpY2UsXG4gIGNhbGN1bGF0ZUxvY2FsZVxufSBmcm9tICcuL2RhdGUtZm5zLWNvbmZpZ3VyYXRpb24uc2VydmljZSc7XG5cbkBQaXBlKHsgbmFtZTogJ2RmbnNGb3JtYXRQdXJlJyB9KVxuZXhwb3J0IGNsYXNzIEZvcm1hdFB1cmVQaXBlIGltcGxlbWVudHMgUGlwZVRyYW5zZm9ybSB7XG4gIGNvbnN0cnVjdG9yKHB1YmxpYyBjb25maWc6IERhdGVGbnNDb25maWd1cmF0aW9uU2VydmljZSkge31cblxuICB0cmFuc2Zvcm0oXG4gICAgZGF0ZTogRGF0ZUZuc0lucHV0RGF0ZSxcbiAgICBkYXRlRm9ybWF0OiBzdHJpbmcsXG4gICAgb3B0aW9ucz86IHtcbiAgICAgIGxvY2FsZT86IExvY2FsZTtcbiAgICAgIHdlZWtTdGFydHNPbj86IDAgfCAxIHwgMiB8IDMgfCA0IHwgNSB8IDY7XG4gICAgICBmaXJzdFdlZWtDb250YWluc0RhdGU/OiBudW1iZXI7XG4gICAgICB1c2VBZGRpdGlvbmFsV2Vla1llYXJUb2tlbnM/OiBib29sZWFuO1xuICAgICAgdXNlQWRkaXRpb25hbERheU9mWWVhclRva2Vucz86IGJvb2xlYW47XG4gICAgfVxuICApOiBzdHJpbmcge1xuICAgIHJldHVybiBmb3JtYXQoZGF0ZSwgZGF0ZUZvcm1hdCwgY2FsY3VsYXRlTG9jYWxlKG9wdGlvbnMsIHRoaXMuY29uZmlnKSk7XG4gIH1cbn1cblxuQE5nTW9kdWxlKHtcbiAgZGVjbGFyYXRpb25zOiBbRm9ybWF0UHVyZVBpcGVdLFxuICBleHBvcnRzOiBbRm9ybWF0UHVyZVBpcGVdXG59KVxuZXhwb3J0IGNsYXNzIEZvcm1hdFB1cmVQaXBlTW9kdWxlIHt9XG4iXX0=

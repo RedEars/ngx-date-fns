@@ -1,0 +1,19 @@
+import { NgModule, Pipe } from '@angular/core';
+import subMilliseconds from 'date-fns/subMilliseconds';
+export class SubMillisecondsPipe {
+    transform(date, amount) {
+        return subMilliseconds(date, amount);
+    }
+}
+SubMillisecondsPipe.decorators = [
+    { type: Pipe, args: [{ name: 'dfnsSubMilliseconds' },] }
+];
+export class SubMillisecondsPipeModule {
+}
+SubMillisecondsPipeModule.decorators = [
+    { type: NgModule, args: [{
+                declarations: [SubMillisecondsPipe],
+                exports: [SubMillisecondsPipe]
+            },] }
+];
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3ViLW1pbGxpc2Vjb25kcy5waXBlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vcHJvamVjdHMvbmd4LWRhdGUtZm5zL3NyYy9saWIvc3ViLW1pbGxpc2Vjb25kcy5waXBlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFpQixNQUFNLGVBQWUsQ0FBQztBQUU5RCxPQUFPLGVBQWUsTUFBTSwwQkFBMEIsQ0FBQztBQUd2RCxNQUFNLE9BQU8sbUJBQW1CO0lBQzlCLFNBQVMsQ0FBQyxJQUFzQixFQUFFLE1BQWM7UUFDOUMsT0FBTyxlQUFlLENBQUMsSUFBSSxFQUFFLE1BQU0sQ0FBQyxDQUFDO0lBQ3ZDLENBQUM7OztZQUpGLElBQUksU0FBQyxFQUFFLElBQUksRUFBRSxxQkFBcUIsRUFBRTs7QUFXckMsTUFBTSxPQUFPLHlCQUF5Qjs7O1lBSnJDLFFBQVEsU0FBQztnQkFDUixZQUFZLEVBQUUsQ0FBQyxtQkFBbUIsQ0FBQztnQkFDbkMsT0FBTyxFQUFFLENBQUMsbUJBQW1CLENBQUM7YUFDL0IiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBOZ01vZHVsZSwgUGlwZSwgUGlwZVRyYW5zZm9ybSB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuaW1wb3J0IHsgRGF0ZUZuc0lucHV0RGF0ZSB9IGZyb20gJy4vdHlwZXMnO1xuaW1wb3J0IHN1Yk1pbGxpc2Vjb25kcyBmcm9tICdkYXRlLWZucy9zdWJNaWxsaXNlY29uZHMnO1xuXG5AUGlwZSh7IG5hbWU6ICdkZm5zU3ViTWlsbGlzZWNvbmRzJyB9KVxuZXhwb3J0IGNsYXNzIFN1Yk1pbGxpc2Vjb25kc1BpcGUgaW1wbGVtZW50cyBQaXBlVHJhbnNmb3JtIHtcbiAgdHJhbnNmb3JtKGRhdGU6IERhdGVGbnNJbnB1dERhdGUsIGFtb3VudDogbnVtYmVyKTogRGF0ZSB7XG4gICAgcmV0dXJuIHN1Yk1pbGxpc2Vjb25kcyhkYXRlLCBhbW91bnQpO1xuICB9XG59XG5cbkBOZ01vZHVsZSh7XG4gIGRlY2xhcmF0aW9uczogW1N1Yk1pbGxpc2Vjb25kc1BpcGVdLFxuICBleHBvcnRzOiBbU3ViTWlsbGlzZWNvbmRzUGlwZV1cbn0pXG5leHBvcnQgY2xhc3MgU3ViTWlsbGlzZWNvbmRzUGlwZU1vZHVsZSB7fVxuIl19

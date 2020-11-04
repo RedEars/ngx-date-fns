@@ -1,0 +1,19 @@
+import { NgModule, Pipe } from '@angular/core';
+import differenceInHours from 'date-fns/differenceInHours';
+export class DifferenceInHoursPipe {
+    transform(dateLeft, dateRight) {
+        return differenceInHours(dateLeft, dateRight);
+    }
+}
+DifferenceInHoursPipe.decorators = [
+    { type: Pipe, args: [{ name: 'dfnsDifferenceInHours' },] }
+];
+export class DifferenceInHoursPipeModule {
+}
+DifferenceInHoursPipeModule.decorators = [
+    { type: NgModule, args: [{
+                declarations: [DifferenceInHoursPipe],
+                exports: [DifferenceInHoursPipe]
+            },] }
+];
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZGlmZmVyZW5jZS1pbi1ob3Vycy5waXBlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vcHJvamVjdHMvbmd4LWRhdGUtZm5zL3NyYy9saWIvZGlmZmVyZW5jZS1pbi1ob3Vycy5waXBlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFpQixNQUFNLGVBQWUsQ0FBQztBQUU5RCxPQUFPLGlCQUFpQixNQUFNLDRCQUE0QixDQUFDO0FBRzNELE1BQU0sT0FBTyxxQkFBcUI7SUFDaEMsU0FBUyxDQUFDLFFBQTBCLEVBQUUsU0FBMkI7UUFDL0QsT0FBTyxpQkFBaUIsQ0FBQyxRQUFRLEVBQUUsU0FBUyxDQUFDLENBQUM7SUFDaEQsQ0FBQzs7O1lBSkYsSUFBSSxTQUFDLEVBQUUsSUFBSSxFQUFFLHVCQUF1QixFQUFFOztBQVd2QyxNQUFNLE9BQU8sMkJBQTJCOzs7WUFKdkMsUUFBUSxTQUFDO2dCQUNSLFlBQVksRUFBRSxDQUFDLHFCQUFxQixDQUFDO2dCQUNyQyxPQUFPLEVBQUUsQ0FBQyxxQkFBcUIsQ0FBQzthQUNqQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IE5nTW9kdWxlLCBQaXBlLCBQaXBlVHJhbnNmb3JtIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBEYXRlRm5zSW5wdXREYXRlIH0gZnJvbSAnLi90eXBlcyc7XG5pbXBvcnQgZGlmZmVyZW5jZUluSG91cnMgZnJvbSAnZGF0ZS1mbnMvZGlmZmVyZW5jZUluSG91cnMnO1xuXG5AUGlwZSh7IG5hbWU6ICdkZm5zRGlmZmVyZW5jZUluSG91cnMnIH0pXG5leHBvcnQgY2xhc3MgRGlmZmVyZW5jZUluSG91cnNQaXBlIGltcGxlbWVudHMgUGlwZVRyYW5zZm9ybSB7XG4gIHRyYW5zZm9ybShkYXRlTGVmdDogRGF0ZUZuc0lucHV0RGF0ZSwgZGF0ZVJpZ2h0OiBEYXRlRm5zSW5wdXREYXRlKTogbnVtYmVyIHtcbiAgICByZXR1cm4gZGlmZmVyZW5jZUluSG91cnMoZGF0ZUxlZnQsIGRhdGVSaWdodCk7XG4gIH1cbn1cblxuQE5nTW9kdWxlKHtcbiAgZGVjbGFyYXRpb25zOiBbRGlmZmVyZW5jZUluSG91cnNQaXBlXSxcbiAgZXhwb3J0czogW0RpZmZlcmVuY2VJbkhvdXJzUGlwZV1cbn0pXG5leHBvcnQgY2xhc3MgRGlmZmVyZW5jZUluSG91cnNQaXBlTW9kdWxlIHt9XG4iXX0=

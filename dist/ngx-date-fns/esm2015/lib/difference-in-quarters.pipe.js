@@ -1,0 +1,19 @@
+import { NgModule, Pipe } from '@angular/core';
+import differenceInQuarters from 'date-fns/differenceInQuarters';
+export class DifferenceInQuartersPipe {
+    transform(dateLeft, dateRight) {
+        return differenceInQuarters(dateLeft, dateRight);
+    }
+}
+DifferenceInQuartersPipe.decorators = [
+    { type: Pipe, args: [{ name: 'dfnsDifferenceInQuarters' },] }
+];
+export class DifferenceInQuartersPipeModule {
+}
+DifferenceInQuartersPipeModule.decorators = [
+    { type: NgModule, args: [{
+                declarations: [DifferenceInQuartersPipe],
+                exports: [DifferenceInQuartersPipe]
+            },] }
+];
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZGlmZmVyZW5jZS1pbi1xdWFydGVycy5waXBlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vcHJvamVjdHMvbmd4LWRhdGUtZm5zL3NyYy9saWIvZGlmZmVyZW5jZS1pbi1xdWFydGVycy5waXBlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFpQixNQUFNLGVBQWUsQ0FBQztBQUU5RCxPQUFPLG9CQUFvQixNQUFNLCtCQUErQixDQUFDO0FBR2pFLE1BQU0sT0FBTyx3QkFBd0I7SUFDbkMsU0FBUyxDQUFDLFFBQTBCLEVBQUUsU0FBMkI7UUFDL0QsT0FBTyxvQkFBb0IsQ0FBQyxRQUFRLEVBQUUsU0FBUyxDQUFDLENBQUM7SUFDbkQsQ0FBQzs7O1lBSkYsSUFBSSxTQUFDLEVBQUUsSUFBSSxFQUFFLDBCQUEwQixFQUFFOztBQVcxQyxNQUFNLE9BQU8sOEJBQThCOzs7WUFKMUMsUUFBUSxTQUFDO2dCQUNSLFlBQVksRUFBRSxDQUFDLHdCQUF3QixDQUFDO2dCQUN4QyxPQUFPLEVBQUUsQ0FBQyx3QkFBd0IsQ0FBQzthQUNwQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IE5nTW9kdWxlLCBQaXBlLCBQaXBlVHJhbnNmb3JtIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBEYXRlRm5zSW5wdXREYXRlIH0gZnJvbSAnLi90eXBlcyc7XG5pbXBvcnQgZGlmZmVyZW5jZUluUXVhcnRlcnMgZnJvbSAnZGF0ZS1mbnMvZGlmZmVyZW5jZUluUXVhcnRlcnMnO1xuXG5AUGlwZSh7IG5hbWU6ICdkZm5zRGlmZmVyZW5jZUluUXVhcnRlcnMnIH0pXG5leHBvcnQgY2xhc3MgRGlmZmVyZW5jZUluUXVhcnRlcnNQaXBlIGltcGxlbWVudHMgUGlwZVRyYW5zZm9ybSB7XG4gIHRyYW5zZm9ybShkYXRlTGVmdDogRGF0ZUZuc0lucHV0RGF0ZSwgZGF0ZVJpZ2h0OiBEYXRlRm5zSW5wdXREYXRlKTogbnVtYmVyIHtcbiAgICByZXR1cm4gZGlmZmVyZW5jZUluUXVhcnRlcnMoZGF0ZUxlZnQsIGRhdGVSaWdodCk7XG4gIH1cbn1cblxuQE5nTW9kdWxlKHtcbiAgZGVjbGFyYXRpb25zOiBbRGlmZmVyZW5jZUluUXVhcnRlcnNQaXBlXSxcbiAgZXhwb3J0czogW0RpZmZlcmVuY2VJblF1YXJ0ZXJzUGlwZV1cbn0pXG5leHBvcnQgY2xhc3MgRGlmZmVyZW5jZUluUXVhcnRlcnNQaXBlTW9kdWxlIHt9XG4iXX0=

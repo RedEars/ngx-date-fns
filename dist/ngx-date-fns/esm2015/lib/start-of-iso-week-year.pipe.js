@@ -1,0 +1,19 @@
+import { NgModule, Pipe } from '@angular/core';
+import startOfISOWeekYear from 'date-fns/startOfISOWeekYear';
+export class StartOfISOWeekYearPipe {
+    transform(date) {
+        return startOfISOWeekYear(date);
+    }
+}
+StartOfISOWeekYearPipe.decorators = [
+    { type: Pipe, args: [{ name: 'dfnsStartOfISOWeekYear' },] }
+];
+export class StartOfISOWeekYearPipeModule {
+}
+StartOfISOWeekYearPipeModule.decorators = [
+    { type: NgModule, args: [{
+                declarations: [StartOfISOWeekYearPipe],
+                exports: [StartOfISOWeekYearPipe]
+            },] }
+];
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoic3RhcnQtb2YtaXNvLXdlZWsteWVhci5waXBlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vLi4vcHJvamVjdHMvbmd4LWRhdGUtZm5zL3NyYy9saWIvc3RhcnQtb2YtaXNvLXdlZWsteWVhci5waXBlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBLE9BQU8sRUFBRSxRQUFRLEVBQUUsSUFBSSxFQUFpQixNQUFNLGVBQWUsQ0FBQztBQUU5RCxPQUFPLGtCQUFrQixNQUFNLDZCQUE2QixDQUFDO0FBRzdELE1BQU0sT0FBTyxzQkFBc0I7SUFDakMsU0FBUyxDQUFDLElBQXNCO1FBQzlCLE9BQU8sa0JBQWtCLENBQUMsSUFBSSxDQUFDLENBQUM7SUFDbEMsQ0FBQzs7O1lBSkYsSUFBSSxTQUFDLEVBQUUsSUFBSSxFQUFFLHdCQUF3QixFQUFFOztBQVd4QyxNQUFNLE9BQU8sNEJBQTRCOzs7WUFKeEMsUUFBUSxTQUFDO2dCQUNSLFlBQVksRUFBRSxDQUFDLHNCQUFzQixDQUFDO2dCQUN0QyxPQUFPLEVBQUUsQ0FBQyxzQkFBc0IsQ0FBQzthQUNsQyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IE5nTW9kdWxlLCBQaXBlLCBQaXBlVHJhbnNmb3JtIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBEYXRlRm5zSW5wdXREYXRlIH0gZnJvbSAnLi90eXBlcyc7XG5pbXBvcnQgc3RhcnRPZklTT1dlZWtZZWFyIGZyb20gJ2RhdGUtZm5zL3N0YXJ0T2ZJU09XZWVrWWVhcic7XG5cbkBQaXBlKHsgbmFtZTogJ2RmbnNTdGFydE9mSVNPV2Vla1llYXInIH0pXG5leHBvcnQgY2xhc3MgU3RhcnRPZklTT1dlZWtZZWFyUGlwZSBpbXBsZW1lbnRzIFBpcGVUcmFuc2Zvcm0ge1xuICB0cmFuc2Zvcm0oZGF0ZTogRGF0ZUZuc0lucHV0RGF0ZSk6IERhdGUge1xuICAgIHJldHVybiBzdGFydE9mSVNPV2Vla1llYXIoZGF0ZSk7XG4gIH1cbn1cblxuQE5nTW9kdWxlKHtcbiAgZGVjbGFyYXRpb25zOiBbU3RhcnRPZklTT1dlZWtZZWFyUGlwZV0sXG4gIGV4cG9ydHM6IFtTdGFydE9mSVNPV2Vla1llYXJQaXBlXVxufSlcbmV4cG9ydCBjbGFzcyBTdGFydE9mSVNPV2Vla1llYXJQaXBlTW9kdWxlIHt9XG4iXX0=

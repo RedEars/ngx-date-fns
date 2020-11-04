@@ -1,0 +1,19 @@
+import { NgModule, Pipe } from '@angular/core';
+import addISOWeekYears from 'date-fns/addISOWeekYears';
+export class AddISOWeekYearsPipe {
+    transform(date, amount) {
+        return addISOWeekYears(date, amount);
+    }
+}
+AddISOWeekYearsPipe.decorators = [
+    { type: Pipe, args: [{ name: 'dfnsAddISOWeekYears' },] }
+];
+export class AddISOWeekYearsPipeModule {
+}
+AddISOWeekYearsPipeModule.decorators = [
+    { type: NgModule, args: [{
+                declarations: [AddISOWeekYearsPipe],
+                exports: [AddISOWeekYearsPipe]
+            },] }
+];
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYWRkLWlzby13ZWVrLXllYXJzLnBpcGUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9wcm9qZWN0cy9uZ3gtZGF0ZS1mbnMvc3JjL2xpYi9hZGQtaXNvLXdlZWsteWVhcnMucGlwZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLEVBQUUsUUFBUSxFQUFFLElBQUksRUFBaUIsTUFBTSxlQUFlLENBQUM7QUFFOUQsT0FBTyxlQUFlLE1BQU0sMEJBQTBCLENBQUM7QUFHdkQsTUFBTSxPQUFPLG1CQUFtQjtJQUM5QixTQUFTLENBQUMsSUFBc0IsRUFBRSxNQUFjO1FBQzlDLE9BQU8sZUFBZSxDQUFDLElBQUksRUFBRSxNQUFNLENBQUMsQ0FBQztJQUN2QyxDQUFDOzs7WUFKRixJQUFJLFNBQUMsRUFBRSxJQUFJLEVBQUUscUJBQXFCLEVBQUU7O0FBV3JDLE1BQU0sT0FBTyx5QkFBeUI7OztZQUpyQyxRQUFRLFNBQUM7Z0JBQ1IsWUFBWSxFQUFFLENBQUMsbUJBQW1CLENBQUM7Z0JBQ25DLE9BQU8sRUFBRSxDQUFDLG1CQUFtQixDQUFDO2FBQy9CIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgTmdNb2R1bGUsIFBpcGUsIFBpcGVUcmFuc2Zvcm0gfSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7IERhdGVGbnNJbnB1dERhdGUgfSBmcm9tICcuL3R5cGVzJztcbmltcG9ydCBhZGRJU09XZWVrWWVhcnMgZnJvbSAnZGF0ZS1mbnMvYWRkSVNPV2Vla1llYXJzJztcblxuQFBpcGUoeyBuYW1lOiAnZGZuc0FkZElTT1dlZWtZZWFycycgfSlcbmV4cG9ydCBjbGFzcyBBZGRJU09XZWVrWWVhcnNQaXBlIGltcGxlbWVudHMgUGlwZVRyYW5zZm9ybSB7XG4gIHRyYW5zZm9ybShkYXRlOiBEYXRlRm5zSW5wdXREYXRlLCBhbW91bnQ6IG51bWJlcik6IERhdGUge1xuICAgIHJldHVybiBhZGRJU09XZWVrWWVhcnMoZGF0ZSwgYW1vdW50KTtcbiAgfVxufVxuXG5ATmdNb2R1bGUoe1xuICBkZWNsYXJhdGlvbnM6IFtBZGRJU09XZWVrWWVhcnNQaXBlXSxcbiAgZXhwb3J0czogW0FkZElTT1dlZWtZZWFyc1BpcGVdXG59KVxuZXhwb3J0IGNsYXNzIEFkZElTT1dlZWtZZWFyc1BpcGVNb2R1bGUge31cbiJdfQ==
