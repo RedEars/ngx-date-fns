@@ -43,7 +43,7 @@
     "release": "npm run build && npm run copy-readme && standard-version --no-verify --commit-all && npm publish dist/ngx-date-fns",
     "next": "npm run build && npm run copy-readme && standard-version --no-verify --commit-all --prerelease beta && npm publish dist/ngx-date-fns --tag next",
     "standard-version": "standard-version",
-    "postinstall": "cp node_modules/ngx-date-fns/dist/ngx-date-fns/ node_modules/ngx-date-fns"
+    "postinstall": "cp node_modules/ngx-date-fns/dist/ngx-date-fns/ node_modules/ngx-date-fns/"
   },
   "standard-version": {
     "scripts": {
