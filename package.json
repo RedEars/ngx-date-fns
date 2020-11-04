@@ -1,0 +1,106 @@
+{
+  "name": "ngx-date-fns",
+  "version": "6.6.1",
+  "description": "date-fns pipes for Angular",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joanllenas/ngx-date-fns"
+  },
+  "keywords": [
+    "angular",
+    "ngx",
+    "angular2",
+    "ng2",
+    "date-fns",
+    "date"
+  ],
+  "author": {
+    "name": "Joan Llenas Masó",
+    "email": "joan.llenas.maso@gmail.com",
+    "url": "http://joanllenas.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joanllenas/ngx-date-fns/issues"
+  },
+  "homepage": "https://github.com/joanllenas/ngx-date-fns#readme",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build ngx-date-fns",
+    "test": "ng test ngx-date-fns",
+    "lint": "ng lint ngx-date-fns",
+    "analyze:app": "npm run build:app && npm run analyze",
+    "build:app": "ng build --namedChunks=true --sourceMap=true --prod",
+    "analyze": "source-map-explorer dist/ngx-date-fns-app/main-es5.*.js",
+    "prettier": "prettier --write src/app/**/*.ts && prettier --write projects/ngx-date-fns/src/lib/**/*.ts",
+    "precommit": "npm run lint",
+    "e2e": "ng e2e",
+    "cm": "git-cz",
+    "cm-retry": "git-cz --retry",
+    "copy-readme": "cp ./README.md ./dist/ngx-date-fns",
+    "build:version": "sync-json -v --property version --source package.json projects/ngx-date-fns/package.json && sync-json -v --property version --source package.json dist/ngx-date-fns/package.json",
+    "release": "npm run build && npm run copy-readme && standard-version --no-verify --commit-all && npm publish dist/ngx-date-fns",
+    "next": "npm run build && npm run copy-readme && standard-version --no-verify --commit-all --prerelease beta && npm publish dist/ngx-date-fns --tag next",
+    "standard-version": "standard-version"
+  },
+  "standard-version": {
+    "scripts": {
+      "postbump": "npm run build:version",
+      "precommit": "git add .",
+      "posttag": "git push --follow-tags"
+    }
+  },
+  "dependencies": {
+    "@angular/animations": "~10.1.1",
+    "@angular/common": "~10.1.1",
+    "@angular/compiler": "~10.1.1",
+    "@angular/core": "~10.1.1",
+    "@angular/forms": "~10.1.1",
+    "@angular/platform-browser": "~10.1.1",
+    "@angular/platform-browser-dynamic": "~10.1.1",
+    "@angular/router": "~10.1.1",
+    "date-fns": "^2.0.1",
+    "rxjs": "~6.6.0",
+    "tslib": "^2.0.0",
+    "zone.js": "~0.10.2"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.1001.1",
+    "@angular-devkit/build-ng-packagr": "~0.1001.1",
+    "@angular/cli": "~10.1.1",
+    "@angular/compiler-cli": "~10.1.1",
+    "@angular/language-service": "~10.1.1",
+    "@types/jasmine": "~3.3.8",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
+    "codelyzer": "^6.0.0",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
+    "ghooks": "^2.0.4",
+    "jasmine-core": "~3.5.0",
+    "jasmine-spec-reporter": "~5.0.0",
+    "karma": "~5.0.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage-istanbul-reporter": "~3.0.2",
+    "karma-jasmine": "~3.3.0",
+    "karma-jasmine-html-reporter": "^1.5.0",
+    "ng-packagr": "^10.0.0",
+    "prettier": "^1.19.1",
+    "protractor": "~7.0.0",
+    "source-map-explorer": "^2.4.2",
+    "standard-version": "^8.0.2",
+    "sync-json": "^1.0.2",
+    "ts-node": "~7.0.0",
+    "tslint": "~6.1.0",
+    "typescript": "~3.9.7"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    },
+    "ghooks": {
+      "pre-commit": "npm run precommit"
+    }
+  }
+}
