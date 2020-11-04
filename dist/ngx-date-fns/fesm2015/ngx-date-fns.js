@@ -2654,6 +2654,9 @@ ParsePurePipeModule.decorators = [
 
 class ParseIsoPipe {
     transform(dateString, options) {
+        if (dateString instanceof Date) {
+            return dateString;
+        }
         return parseISO(dateString, options);
     }
 }

@@ -1,6 +1,6 @@
 import { PipeTransform } from '@angular/core';
 export declare class ParseIsoPipe implements PipeTransform {
-    transform(dateString: string, options?: {
+    transform(dateString: any, options?: {
         additionalDigits?: 0 | 1 | 2;
     }): Date;
 }

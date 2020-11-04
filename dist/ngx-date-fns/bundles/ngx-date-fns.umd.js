@@ -3416,6 +3416,9 @@
         function ParseIsoPipe() {
         }
         ParseIsoPipe.prototype.transform = function (dateString, options) {
+            if (dateString instanceof Date) {
+                return dateString;
+            }
             return parseISO(dateString, options);
         };
         return ParseIsoPipe;
